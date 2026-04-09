@@ -3,73 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ravin Tech Solution</title>
+<title>RAVIN TECH SOLUTION</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: red;
-    }
+    background: #fff;
+}
 
 /* HEADER */
 header {
-    background: black;
+    background: red;
     color: white;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
 }
 
-/* LOGO */
 .logo {
     font-size: 20px;
     font-weight: bold;
 }
 
-/* HAMBURGER */
+/* MENU */
 .menu-icon {
     font-size: 25px;
     cursor: pointer;
 }
 
-/* MENU */
 .menu {
     display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: white;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background: black;
+    padding: 10px;
 }
 
-.menu a {
+.menu button {
     display: block;
-    margin: 10px;
-    padding: 12px;
-    text-decoration: none;
-    color: red;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
     border: 2px solid red;
-    border-radius: 8px;
-    text-align: center;
+    background: white;
+    color: black;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-/* HOVER EFFECT */
-.menu a:hover {
-    background: red;
-    color: white;
-    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* HERO */
 .hero {
-    background:  #ffe5e5;
     text-align: center;
-    padding: 50px 20px;
+    padding: 40px;
+    background: #ffe5e5;
 }
 
 .hero h1 {
@@ -78,94 +64,148 @@ header {
 
 /* SERVICES */
 .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
     padding: 20px;
 }
 
-.services h2 {
+.box {
+    border: 2px solid red;
+    padding: 15px;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.box h3 {
     color: red;
 }
 
-.service-box {
-    background: black;
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: red;
     color: white;
-    margin: 10px 0;
-    padding: 15px;
-    border-left: 5px solid red;
-    border-radius: 8px;
+}
+
+.stat-box {
+    text-align: center;
 }
 
 /* CONTACT */
 .contact {
-    background: black;
-    color: white;
     padding: 20px;
     text-align: center;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #000;
-    color: #fff;
+/* WHATSAPP BUTTON */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: green;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
-    <div class="logo">Ravin Tech solution</div>
+    <div class="logo">RAVIN TECH SOLUTION</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
 </header>
 
 <div class="menu" id="menu">
-    <a href="#about">About Us</a>
-    <a href="#career">Career</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <button>About Us</button>
+    <button>Career</button>
+    <button>Services</button>
+    <button>Contact</button>
 </div>
 
 <section class="hero">
-    <h1>Ravin Tech Solution</h1>
-    <p>Build Your Career With Technology 🚀</p>
+    <h1>Build Your Career With Technology</h1>
+    <p>We provide professional digital services including web development, editing, cybersecurity, and more to grow your business.</p>
 </section>
 
-<section id="about" class="services">
-    <h2>About Us</h2>
-    <p>We provide professional digital services including web development, designing, and AI solutions to grow your business.</p>
+<section class="services">
+
+    <div class="box">
+        <h3>Web Designing</h3>
+        <p>Modern, responsive and attractive website designs for your business.</p>
+    </div>
+
+    <div class="box">
+        <h3>Photo Editing</h3>
+        <p>High-quality image editing, retouching and enhancement.</p>
+    </div>
+
+    <div class="box">
+        <h3>Cyber Security</h3>
+        <p>Protect your data and systems with advanced security solutions.</p>
+    </div>
+
+    <div class="box">
+        <h3>Video Editing</h3>
+        <p>Professional video editing for social media and business use.</p>
+    </div>
+
+    <div class="box">
+        <h3>Data Analysis</h3>
+        <p>Analyze and visualize data to make smart business decisions.</p>
+    </div>
+
+    <div class="box">
+        <h3>Game Account Recovery</h3>
+        <p>Secure and recover lost gaming accounts quickly.</p>
+    </div>
+
+    <div class="box">
+        <h3>App Development</h3>
+        <p>Build powerful mobile applications for Android and iOS.</p>
+    </div>
+
+    <div class="box">
+        <h3>Web Development</h3>
+        <p>Full-stack development services for all types of websites.</p>
+    </div>
+
 </section>
 
-<section id="career" class="services">
-    <h2>Career</h2>
-    <p>Join our team and build your future in the tech industry. Opportunities coming soon.</p>
+<section class="stats">
+    <div class="stat-box">
+        <h2>50+</h2>
+        <p>Projects</p>
+    </div>
+    <div class="stat-box">
+        <h2>20+</h2>
+        <p>Clients</p>
+    </div>
+    <div class="stat-box">
+        <h2>Trusted</h2>
+        <p>By Clients</p>
+    </div>
 </section>
 
-<section id="services" class="services">
-    <h2>Our Services</h2>
-
-    <div class="service-box">Web Development</div>
-    <div class="service-box">Web Designing</div>
-    <div class="service-box">Logo Editing</div>
-    <div class="service-box">Photo Editing</div>
-    <div class="service-box">Video Editing</div>
-    <div class="service-box">AI Solutions</div>
-
-</section>
-
-<section id="contact" class="contact">
+<section class="contact">
     <h2>Contact Us</h2>
-    <p>WhatsApp: 9042458779</p>
-    <p>Instagram: rx_traffic_razer_46</p>
+    <p>📞 Phone: 9042458779</p>
+    <p>📷 Instagram: ravin_tech_official.in</p>
+    <p>📧 Email: ravintechsolution@gmail.com</p>
 </section>
 
-<footer>
-    <p>© 2026 Ravin Tech Solution</p>
-</footer>
+<a href="https://wa.me/919042458779" class="whatsapp">💬</a>
 
 <script>
 function toggleMenu() {
-    var menu = document.getElementById("menu");
+    let menu = document.getElementById("menu");
     if (menu.style.display === "block") {
         menu.style.display = "none";
     } else {
@@ -175,4 +215,4 @@ function toggleMenu() {
 </script>
 
 </body>
-</html>
+    </html>
