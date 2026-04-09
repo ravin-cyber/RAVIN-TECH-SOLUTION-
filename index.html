@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravin Tech Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#ff1a1a;
+  --dark:#0b0b0c;
+  --card:#141416;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--dark);
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  background:#000;
+  z-index:1000;
+}
+
+.logo{
+  color:var(--red);
+  font-weight:700;
+}
+
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f');
+  background-size:cover;
+}
+
+.hero h1{
+  font-size:45px;
+}
+
+.hero p{
+  margin:10px 0;
+}
+
+.btn{
+  background:var(--red);
+  padding:10px 20px;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* SECTION */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+/* SERVICES */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  width:250px;
+}
+
+/* PORTFOLIO */
+.portfolio img{
+  width:250px;
+  margin:10px;
+  border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:20px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">RAVIN TECH SOLUTIONS</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h1>Ravin Tech Solutions</h1>
+<p>Smart Solutions for a Digital World</p>
+<button class="btn" onclick="scrollToSection('contact')">Hire Now</button>
+</section>
+
+<section id="about">
+<h2>About Us</h2>
+<p>Ravin Tech Solutions is a digital service company providing video editing, web development, logo design and branding services. We help businesses grow online with professional and creative solutions.</p>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="cards">
+<div class="card">
+<h3>Video Editing</h3>
+<p>YouTube, reels & ads editing</p>
+</div>
+
+<div class="card">
+<h3>Web Development</h3>
+<p>Modern responsive websites</p>
+</div>
+
+<div class="card">
+<h3>Logo Design</h3>
+<p>Creative brand logos</p>
+</div>
+
+<div class="card">
+<h3>Social Media Design</h3>
+<p>Posts & marketing creatives</p>
+</div>
+</div>
+</section>
+
+<section id="portfolio">
+<h2>Our Work</h2>
+<div class="portfolio">
+<img src="https://via.placeholder.com/250">
+<img src="https://via.placeholder.com/250">
+<img src="https://via.placeholder.com/250">
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>WhatsApp: 9042458779</p>
+<p>Instagram: @ravintech</p>
+</section>
+
+<footer>
+<p>© 2026 Ravin Tech Solutions</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919042458779">💬</a>
+
+<script>
+function scrollToSection(id){
+ document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
