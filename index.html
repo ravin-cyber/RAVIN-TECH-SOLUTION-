@@ -47,15 +47,22 @@ header {
 
 .menu a {
     display: block;
+    margin: 10px;
     padding: 12px;
     text-decoration: none;
-    color: black;
-    border-bottom: 1px solid #ddd;
+    color: red;
+    border: 2px solid red;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
+/* HOVER EFFECT */
 .menu a:hover {
     background: red;
     color: white;
+    transform: scale(1.05);
 }
 
 /* HERO */
@@ -106,7 +113,7 @@ footer {
 <body>
 
 <header>
-    <div class="logo">Ravin Tech</div>
+    <div class="logo">Ravin Tech solution</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
 </header>
 
