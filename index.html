@@ -8,6 +8,81 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+  /* HERO SECTION */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+}
+
+/* Animated red gradient background */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, red, black, black);
+    animation: moveBg 8s linear infinite;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-25%, -25%); }
+    100% { transform: translate(0,0); }
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+/* Content */
+.content {
+    position: relative;
+    text-align: center;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+/* Title */
+.content h1 {
+    font-size: 45px;
+    color: red;
+    animation: glow 2s infinite alternate;
+}
+
+/* Glow effect */
+@keyframes glow {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 30px red; }
+}
+
+/* Tagline */
+.content p {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+/* Button */
+.btn {
+    padding: 12px 25px;
+    background: red;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
   
 body{
   margin:0;
@@ -41,12 +116,15 @@ nav a{
 
 /* HERO */
 .hero{
-  margin-top:80px;
-  padding:100px 20px;
-  text-align:center;
-  background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
-  color:white;
-}
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <h1>Ravin Tech Solutions</h1>
+        <p>Building the Future with Technology</p>
+        <button class="btn">Get Started</button>
+    </div>
+</section>
 .hero h1{
   font-size:40px;
 }
