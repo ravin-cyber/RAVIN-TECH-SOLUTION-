@@ -2,92 +2,239 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>RAVIN TECH SOLUTION</title>
+<title>Ravin Tech SOLUTION</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial;
-    background: black;
-    color: white;
+    background: white;
+    color: black;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    color: red;
-}
-
-/* Main Box */
-.container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-/* Input */
-input {
-    width: 70%;
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    outline: none;
-}
-
-/* Button */
-button {
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
     padding: 15px;
     background: red;
-    border: none;
     color: white;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(red, white);
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: black;
+    color: white;
+    border: none;
     cursor: pointer;
 }
 
-/* Result */
-#result {
-    margin-top: 30px;
-    font-size: 20px;
+/* SECTIONS */
+section {
+    padding: 50px;
+    text-align: center;
 }
 
-/* Glow */
-h1 {
-    animation: glow 2s infinite alternate;
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px red; }
-    to { text-shadow: 0 0 30px red; }
+.box {
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* CONTACT */
+.contact a {
+    display: block;
+    margin: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+/* AI BUTTON */
+#ai-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: red;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* CHAT BOX */
+#chat-box {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border: 2px solid red;
+    display: none;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: red;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#chat-content {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 5px;
+}
+
+.chat-input button {
+    background: red;
+    color: white;
+    border: none;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>RAVIN TECH SOLUTION</h1>
-    <p>Ask any math question 🤖</p>
-</header>
+<!-- NAVBAR -->
+<nav>
+    <h2>RAVIN TECH SOLUTION</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-<div class="container">
-    <input type="text" id="input" placeholder="Enter math problem...">
-    <button onclick="solve()">Solve</button>
+<!-- HERO -->
+<div class="hero">
+    <h1>Ravin Tech SOLUTION</h1>
+    <p>We build powerful digital solutions</p>
+    <button class="btn">Get Started</button>
+</div>
 
-    <div id="result"></div>
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>Ravin Tech Solution is a modern tech company providing high-quality digital services including development, design, and marketing.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="box">Web Development</div>
+        <div class="box">Web Designing</div>
+        <div class="box">Logo Editing</div>
+        <div class="box">Photo Editing</div>
+        <div class="box">Video Editing</div>
+    </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+    <h2>Career</h2>
+    <p>Join Ravin Tech Solution and grow your career with us. Contact us to apply.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <a href="https://wa.me/919042458779" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/rx_traffic_razer_46" target="_blank">Instagram</a>
+</section>
+
+<!-- AI BUTTON -->
+<div id="ai-btn" onclick="openChat()">💬</div>
+
+<!-- CHAT BOX -->
+<div id="chat-box">
+    <div class="chat-header">
+        AI Assistant
+        <span onclick="closeChat()">✖</span>
+    </div>
+
+    <div id="chat-content"></div>
+
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Ask something...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
 </div>
 
 <script>
-function solve() {
-    let input = document.getElementById("input").value;
+function openChat() {
+    document.getElementById("chat-box").style.display = "flex";
+}
 
-    try {
-        let answer = eval(input);
-        document.getElementById("result").innerHTML =
-            "Answer: " + answer;
-    } catch {
-        document.getElementById("result").innerHTML =
-            "Invalid input!";
-    }
+function closeChat() {
+    document.getElementById("chat-box").style.display = "none";
+}
+
+function sendMessage() {
+    let input = document.getElementById("user-input");
+    let msg = input.value;
+
+    if(msg === "") return;
+
+    let chat = document.getElementById("chat-content");
+
+    chat.innerHTML += "<p><b>You:</b> " + msg + "</p>";
+
+    let reply = getReply(msg);
+
+    setTimeout(() => {
+        chat.innerHTML += "<p><b>AI:</b> " + reply + "</p>";
+        chat.scrollTop = chat.scrollHeight;
+    }, 500);
+
+    input.value = "";
+}
+
+function getReply(msg) {
+    msg = msg.toLowerCase();
+
+    if(msg.includes("hello")) return "Hello 👋 Welcome to Ravin Tech Solution!";
+    if(msg.includes("services")) return "We provide web, design, editing services.";
+    if(msg.includes("contact")) return "Contact us via WhatsApp or Instagram.";
+    if(msg.includes("price")) return "Pricing depends on your project.";
+
+    return "I'm your AI assistant 🤖. Ask anything!";
 }
 </script>
 
