@@ -2,36 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ravin Tech SOLUTION</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ravin Tech Solution</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
     margin: 0;
     font-family: Arial;
-    background: white;
-    color: black;
 }
 
 /* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    align-items: center;
     background: red;
     color: white;
+    padding: 15px;
 }
 
 nav a {
     color: white;
     margin: 10px;
     text-decoration: none;
-    font-weight: bold;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 70px 20px;
     background: linear-gradient(red, white);
 }
 
@@ -44,15 +46,15 @@ nav a {
     background: black;
     color: white;
     border: none;
-    cursor: pointer;
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
-    padding: 50px;
+    padding: 40px 20px;
     text-align: center;
 }
 
+/* SERVICES */
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -82,15 +84,15 @@ section {
     color: white;
     padding: 15px;
     border-radius: 50%;
-    cursor: pointer;
 }
 
-/* CHAT BOX */
+/* CHAT */
 #chat-box {
     position: fixed;
     bottom: 80px;
     right: 20px;
-    width: 300px;
+    width: 90%;
+    max-width: 300px;
     background: white;
     border: 2px solid red;
     display: none;
@@ -125,6 +127,17 @@ section {
     color: white;
     border: none;
 }
+
+/* MOBILE */
+@media (max-width:768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
 </style>
 </head>
 
@@ -143,15 +156,15 @@ section {
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Ravin Tech SOLUTION</h1>
-    <p>We build powerful digital solutions</p>
+    <h1>Ravin Tech Solution</h1>
+    <p>Building Smart Digital Solutions</p>
     <button class="btn">Get Started</button>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>About Us</h2>
-    <p>Ravin Tech Solution is a modern tech company providing high-quality digital services including development, design, and marketing.</p>
+    <p>We provide modern digital solutions like web development, design, and editing services for businesses and individuals.</p>
 </section>
 
 <!-- SERVICES -->
@@ -169,20 +182,20 @@ section {
 <!-- CAREER -->
 <section id="career">
     <h2>Career</h2>
-    <p>Join Ravin Tech Solution and grow your career with us. Contact us to apply.</p>
+    <p>Join our team and grow with Ravin Tech Solution. DM us to apply.</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-    <h2>Contact Us</h2>
+    <h2>Contact</h2>
     <a href="https://wa.me/919042458779" target="_blank">WhatsApp</a>
-    <a href="https://instagram.com/rx_traffic_razer_46" target="_blank">Instagram</a>
+    <a href="https://instagram.com/ravin_tech_official.in" target="_blank">Instagram</a>
 </section>
 
 <!-- AI BUTTON -->
 <div id="ai-btn" onclick="openChat()">💬</div>
 
-<!-- CHAT BOX -->
+<!-- CHAT -->
 <div id="chat-box">
     <div class="chat-header">
         AI Assistant
@@ -192,7 +205,7 @@ section {
     <div id="chat-content"></div>
 
     <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Ask something...">
+        <input type="text" id="user-input" placeholder="Ask...">
         <button onclick="sendMessage()">Send</button>
     </div>
 </div>
@@ -210,33 +223,33 @@ function sendMessage() {
     let input = document.getElementById("user-input");
     let msg = input.value;
 
-    if(msg === "") return;
+    if(msg==="") return;
 
     let chat = document.getElementById("chat-content");
 
-    chat.innerHTML += "<p><b>You:</b> " + msg + "</p>";
+    chat.innerHTML += "<p><b>You:</b> "+msg+"</p>";
 
     let reply = getReply(msg);
 
-    setTimeout(() => {
-        chat.innerHTML += "<p><b>AI:</b> " + reply + "</p>";
+    setTimeout(()=>{
+        chat.innerHTML += "<p><b>AI:</b> "+reply+"</p>";
         chat.scrollTop = chat.scrollHeight;
-    }, 500);
+    },500);
 
-    input.value = "";
+    input.value="";
 }
 
-function getReply(msg) {
+function getReply(msg){
     msg = msg.toLowerCase();
 
-    if(msg.includes("hello")) return "Hello 👋 Welcome to Ravin Tech Solution!";
-    if(msg.includes("services")) return "We provide web, design, editing services.";
-    if(msg.includes("contact")) return "Contact us via WhatsApp or Instagram.";
+    if(msg.includes("hello")) return "Welcome to Ravin Tech Solution 👋";
+    if(msg.includes("services")) return "We provide web, design & editing services.";
+    if(msg.includes("contact")) return "Use WhatsApp or Instagram below.";
     if(msg.includes("price")) return "Pricing depends on your project.";
 
-    return "I'm your AI assistant 🤖. Ask anything!";
+    return "Ask me anything about our services 🤖";
 }
 </script>
 
 </body>
-</html>
+    </html>
