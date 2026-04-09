@@ -5,128 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ravin Tech Solutions</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-.service-box {
-    background-color: #000;
-    color: #fff; /* ✅ makes all text visible */
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.service-box h2,
-.service-box h3,
-.service-box p {
-    color: #ffffff !important; /* 🔥 force show text */
-}
-  
-  .service-box {
-    background: #000;
-    color: #fff; /* 🔥 THIS FIXES TEXT */
-    padding: 20px;
-    border-radius: 15px;
-  }
-  .tagline {
-    color: #ccc;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .service-box {
-    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
-    color: #fff;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-    transition: 0.3s;
-}
-
-.service-box:hover {
-    transform: scale(1.05);
-}
 body{
   margin:0;
   font-family:'Inter',sans-serif;
-  background:linear-gradient(135deg,#eef2f7,#e3e9f1);
+  background:#f5f7fa;
   color:#111;
 }
 
 /* NAVBAR */
 header{
   position:fixed;
-  width:100%;
   top:0;
+  width:100%;
+  background:white;
   display:flex;
   justify-content:space-between;
   padding:15px 40px;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
   z-index:1000;
 }
-.logo{color:#ff1a1a;font-weight:700}
-nav a{color:white;margin:0 10px;text-decoration:none}
+.logo{
+  font-weight:700;
+  color:#007bff;
+}
+nav a{
+  margin:0 15px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
 
 /* HERO */
 .hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  margin-top:80px;
+  padding:100px 20px;
   text-align:center;
-  background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+  background:linear-gradient(120deg,#007bff,#00c6ff);
   color:white;
 }
 .hero h1{
-  font-size:50px;
-  background:linear-gradient(90deg,#ff1a1a,#ff4d4d);
-  -webkit-background-clip:text;
-  color:transparent;
+  font-size:40px;
+}
+.hero p{
+  margin:15px 0;
 }
 .btn{
-  background:#ff1a1a;
+  background:white;
+  color:#007bff;
   padding:12px 25px;
   border:none;
-  border-radius:30px;
-  color:white;
+  border-radius:5px;
   cursor:pointer;
 }
 
-/* SECTION */
-section{padding:100px 20px;text-align:center}
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+.container{
+  max-width:1000px;
+  margin:auto;
+}
 
-/* CARDS */
+/* SERVICES */
 .cards{
   display:flex;
   flex-wrap:wrap;
+  gap:20px;
   justify-content:center;
-  gap:25px;
 }
 .card{
-  background:#111;
+  background:white;
   padding:25px;
-  border-radius:15px;
-  width:260px;
-  transition:.3s;
+  width:280px;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 10px 30px rgba(255,0,0,0.3);
+.card h3{
+  color:#007bff;
 }
 
-/* CTA */
-.cta{
-  background:#ff1a1a;
-  padding:50px;
-  border-radius:20px;
-  margin:40px;
+/* ABOUT */
+.about{
+  color:#555;
+  line-height:1.6;
 }
 
 /* FOOTER */
 footer{
-  background:#000;
+  background:#111;
+  color:#aaa;
   padding:20px;
   text-align:center;
 }
@@ -145,20 +117,7 @@ footer{
   align-items:center;
   color:white;
   text-decoration:none;
-  font-size:22px;
 }
-/* ANIMATIONS */
-.fade-in{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 1s ease;
-}
-
-.fade-in.show{
-  opacity:1;
-  transform:translateY(0);
-    }
-  
 </style>
 </head>
 
@@ -168,45 +127,64 @@ footer{
 <div class="logo">RAVIN TECH SOLUTIONS</div>
 <nav>
 <a href="#home">Home</a>
+<a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
-  
 
-<h2>Build Your Career</h2>
-
-<section id="Home" class="fade-in">
-  <p class="tagline">
-Empowering innovation through cutting-edge technology, we build digital solutions that shape the future. Step into the world of tech and unlock endless possibilities.
-  </p>
-<h1>Build Your Digital Brand</h1>
-<p>Web • Design • Video • Marketing</p>
+<section class="hero" id="home">
+<h1>Professional Digital Solutions</h1>
+<p>We build websites, design brands, and create digital experiences</p>
 <button class="btn" onclick="scrollToSection('contact')">Get Started</button>
 </section>
 
-<section id="service's" class="fade-in">
-<h2>Our Services</h2>
-<div class="cards">
-<div class="card"><h3>Web Development</h3><p>Modern websites</p></div>
-<div class="card"><h3>Video Editing</h3><p>Reels & YouTube</p></div>
-<div class="card"><h3>Logo Design</h3><p>Brand identity</p></div>
+<section id="about">
+<div class="container">
+<h2>About Us</h2>
+<p class="about">
+Ravin Tech Solutions is a professional technology service provider offering web development, video editing, and branding solutions. We focus on delivering high-quality, reliable, and scalable digital services to help businesses grow in the online world.
+</p>
 </div>
 </section>
 
-<section class="cta">
-<h2>Let’s Grow Your Business 🚀</h2>
-<button class="btn" onclick="scrollToSection('contact')">Contact Now</button>
+<section id="services">
+<div class="container">
+<h2>Our Services</h2>
+<div class="cards">
+
+<div class="card">
+<h3>Web Development</h3>
+<p>Responsive and modern business websites</p>
+</div>
+
+<div class="card">
+<h3>Video Editing</h3>
+<p>Professional editing for social media & ads</p>
+</div>
+
+<div class="card">
+<h3>Logo & Branding</h3>
+<p>Creative logos and brand identity design</p>
+</div>
+
+<div class="card">
+<h3>Digital Marketing</h3>
+<p>Grow your business with online strategies</p>
+</div>
+
+</div>
+</div>
 </section>
-  
-<section id="contact" class="fade-in">
-  <h2>Contact</h2>
+
+<section id="contact">
+<h2>Contact Us</h2>
 <p>WhatsApp: 9042458779</p>
-<p>Instagram: @rx_traffic_razer_46</p>
+<p>Instagram: @ravin_tech_solution</p>
 </section>
 
 <footer>
-<p>© 2026 Ravin Tech Solutions</p>
+<p>© 2026 Ravin Tech Solutions. All rights reserved.</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/919042458779">💬</a>
@@ -216,25 +194,6 @@ function scrollToSection(id){
  document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 </script>
-  <script>
-function scrollToSection(id){
- document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-
-// ANIMATION ON SCROLL
-const elements = document.querySelectorAll('.fade-in');
-
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    const position = el.getBoundingClientRect().top;
-    const screenHeight = window.innerHeight;
-
-    if(position < screenHeight - 100){
-      el.classList.add('show');
-    }
-  });
-});
-  </script>
 
 </body>
-</html>
+    </html>
