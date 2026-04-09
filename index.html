@@ -2,390 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ravin Tech Solutions</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>RAVIN TECH SOLUTION</title>
 
 <style>
-  /* AI Button */
-#ai-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: red;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-/* Chat Box */
-#chat-box {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 300px;
+body {
+    margin: 0;
+    font-family: Arial;
     background: black;
-    border: 2px solid red;
-    display: none;
-    flex-direction: column;
+    color: white;
 }
 
 /* Header */
-.chat-header {
-    background: red;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+header {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: red;
 }
 
-/* Messages */
-#chat-content {
-    height: 200px;
-    overflow-y: auto;
-    padding: 10px;
+/* Main Box */
+.container {
+    text-align: center;
+    margin-top: 50px;
 }
 
 /* Input */
-.chat-input {
-    display: flex;
+input {
+    width: 70%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    outline: none;
 }
 
-.chat-input input {
-    flex: 1;
-    padding: 5px;
-}
-
-.chat-input button {
+/* Button */
+button {
+    padding: 15px;
     background: red;
     border: none;
     color: white;
-}
-  /* HERO SECTION */
-.hero {
-    position: relative;
-    height: 100vh;
-    background: black;
-    overflow: hidden;
+    cursor: pointer;
 }
 
-/* Animated red gradient background */
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, red, black, black);
-    animation: moveBg 8s linear infinite;
+/* Result */
+#result {
+    margin-top: 30px;
+    font-size: 20px;
 }
 
-@keyframes moveBg {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(-25%, -25%); }
-    100% { transform: translate(0,0); }
-}
-
-/* Dark overlay */
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-}
-
-/* Content */
-.content {
-    position: relative;
-    text-align: center;
-    top: 40%;
-    transform: translateY(-50%);
-}
-
-/* Title */
-.content h1 {
-    font-size: 45px;
-    color: red;
+/* Glow */
+h1 {
     animation: glow 2s infinite alternate;
 }
 
-/* Glow effect */
 @keyframes glow {
     from { text-shadow: 0 0 10px red; }
     to { text-shadow: 0 0 30px red; }
 }
-
-/* Tagline */
-.content p {
-    font-size: 20px;
-    margin: 15px 0;
-}
-
-/* Button */
-.btn {
-    padding: 12px 25px;
-    background: red;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: darkred;
-    transform: scale(1.1);
-}
-  
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:linear-gradient(135deg,#eef2f7,#e3e9f1);
-  color:#111;
-}
-
-/* NAVBAR */
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:white;
-  display:flex;
-  justify-content:space-between;
-  padding:15px 40px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  z-index:1000;
-}
-.logo{
-  font-weight:700;
-  color:#007bff;
-}
-nav a{
-  margin:0 15px;
-  text-decoration:none;
-  color:#333;
-  font-size:14px;
-}
-
-/* HERO */
-.hero{
-  <section class="hero">
-    <div class="overlay"></div>
-
-    <div class="content">
-        <h1>Ravin Tech Solutions</h1>
-        <p>Building the Future with Technology</p>
-        <button class="btn">Get Started</button>
-    </div>
-</section>
-.hero h1{
-  font-size:40px;
-}
-.hero p{
-  margin:15px 0;
-}
-.btn{
-  background:white;
-  color:#007bff;
-  padding:12px 25px;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
-}
-
-/* SECTIONS */
-section{
-  padding:80px 20px;
-  text-align:center;
-}
-.container{
-  max-width:1000px;
-  margin:auto;
-}
-
-/* SERVICES */
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-}
-.card{
-  background:white;
-  padding:25px;
-  width:280px;
-  border-radius:10px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-.card h3{
-  color:#007bff;
-}
-
-/* ABOUT */
-.about{
-  color:#555;
-  line-height:1.6;
-}
-
-/* FOOTER */
-footer{
-  background:#111;
-  color:#aaa;
-  padding:20px;
-  text-align:center;
-}
-
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-decoration:none;
-}
 </style>
 </head>
-  <!-- AI Chat Button -->
-<div id="ai-btn" onclick="openChat()">💬 AI</div>
-
-<!-- Chat Box -->
-<div id="chat-box">
-    <div class="chat-header">
-        AI Assistant
-        <span onclick="closeChat()">✖</span>
-    </div>
-
-    <div id="chat-content"></div>
-
-    <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Ask something...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-</div>
-  <script>
-function openChat() {
-    document.getElementById("chat-box").style.display = "flex";
-}
-
-function closeChat() {
-    document.getElementById("chat-box").style.display = "none";
-}
-
-function sendMessage() {
-    let input = document.getElementById("user-input");
-    let message = input.value;
-
-    if(message === "") return;
-
-    let chat = document.getElementById("chat-content");
-
-    chat.innerHTML += "<p><b>You:</b> " + message + "</p>";
-
-    let reply = getAIResponse(message);
-
-    setTimeout(() => {
-        chat.innerHTML += "<p><b>AI:</b> " + reply + "</p>";
-        chat.scrollTop = chat.scrollHeight;
-    }, 500);
-
-    input.value = "";
-}
-
-/* Simple AI Logic */
-function getAIResponse(msg) {
-    msg = msg.toLowerCase();
-
-    if(msg.includes("hello")) return "Hello 👋 Welcome to Ravin Tech Solutions!";
-    if(msg.includes("price")) return "Prices depend on services. DM us on WhatsApp!";
-    if(msg.includes("contact")) return "Contact us on WhatsApp: 9042458779";
-    if(msg.includes("services")) return "We offer Web, App Development & Marketing.";
-
-    return "I'm your AI assistant 🤖. Ask about our services!";
-}
-  </script>
 
 <body>
 
 <header>
-<div class="logo">RAVIN TECH SOLUTIONS</div>
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
+    <h1>RAVIN TECH SOLUTION</h1>
+    <p>Ask any math question 🤖</p>
 </header>
 
-<section class="hero" id="home">
-<h1>Professional Digital Solutions</h1>
-<p>We build websites, design brands, and create digital experiences</p>
-<button class="btn" onclick="scrollToSection('contact')">Get Started</button>
-</section>
-
-<section id="about">
 <div class="container">
-<h2>About Us</h2>
-<p class="about">
-Ravin Tech Solutions is a professional technology service provider offering web development, video editing, and branding solutions. We focus on delivering high-quality, reliable, and scalable digital services to help businesses grow in the online world.
-</p>
+    <input type="text" id="input" placeholder="Enter math problem...">
+    <button onclick="solve()">Solve</button>
+
+    <div id="result"></div>
 </div>
-</section>
-
-<section id="services">
-<div class="container">
-<h2>Our Services</h2>
-<div class="cards">
-
-<div class="card">
-<h3>Web Development</h3>
-<p>Responsive and modern business websites</p>
-</div>
-
-<div class="card">
-<h3>Video Editing</h3>
-<p>Professional editing for social media & ads</p>
-</div>
-
-<div class="card">
-<h3>Logo & Branding</h3>
-<p>Creative logos and brand identity design</p>
-</div>
-
-<div class="card">
-<h3>Digital Marketing</h3>
-<p>Grow your business with online strategies</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact Us</h2>
-<p>WhatsApp: 9042458779</p>
-<p>Instagram: @ravin_tech_solution</p>
-</section>
-
-<footer>
-<p>© 2026 Ravin Tech Solutions. All rights reserved.</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/919042458779">💬</a>
 
 <script>
-function scrollToSection(id){
- document.getElementById(id).scrollIntoView({behavior:'smooth'});
+function solve() {
+    let input = document.getElementById("input").value;
+
+    try {
+        let answer = eval(input);
+        document.getElementById("result").innerHTML =
+            "Answer: " + answer;
+    } catch {
+        document.getElementById("result").innerHTML =
+            "Invalid input!";
+    }
 }
 </script>
 
 </body>
-    </html>
+</html>
