@@ -8,6 +8,53 @@
 <title>Ravin Tech Solution</title>
 
 <style>
+
+    /* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+}
+
+/* Logo */
+.logo {
+    width: 35px;
+}
+
+/* 3-line icon */
+.menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Menu hidden by default */
+.menu {
+    display: none;
+    flex-direction: column;
+    background: black;
+    text-align: center;
+}
+
+/* Menu links */
+.menu a {
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid #333;
+}
+
+/* Hover effect */
+.menu a:hover {
+    background: red;
+}
+
+/* Show menu */
+.menu.active {
+    display: flex;
+}
     .navbar {
     position: sticky;
     top: 0;
@@ -187,6 +234,12 @@ section {
 }
 </style>
 </head>
+    <script>
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+}
+    </script>
 
 <body>
 
