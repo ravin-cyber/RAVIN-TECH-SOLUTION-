@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career - RAVIN TECH SOLUTION</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+header {
+    background: red;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CONTENT */
+.container {
+    padding: 20px;
+}
+
+h1 {
+    color: red;
+}
+
+/* JOB BOX */
+.job-box {
+    border: 2px solid red;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+/* APPLY BUTTON */
+.apply-btn {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <div>RAVIN TECH SOLUTION</div>
+</header>
+
+<div class="container">
+    <h1>Careers</h1>
+
+    <p>Join our team and build your future with technology 🚀</p>
+
+    <div class="job-box">
+        <h3>Web Developer</h3>
+        <p>Looking for skilled developers with HTML, CSS, JavaScript knowledge.</p>
+        <button class="apply-btn" onclick="applyNow()">Apply Now</button>
+    </div>
+
+    <div class="job-box">
+        <h3>Graphic Designer</h3>
+        <p>Creative designers for photo editing and branding works.</p>
+        <button class="apply-btn" onclick="applyNow()">Apply Now</button>
+    </div>
+
+    <div class="job-box">
+        <h3>Video Editor</h3>
+        <p>Professional video editors for social media and ads.</p>
+        <button class="apply-btn" onclick="applyNow()">Apply Now</button>
+    </div>
+
+    <div class="job-box">
+        <h3>App Developer</h3>
+        <p>Android/iOS developers with real project experience.</p>
+        <button class="apply-btn" onclick="applyNow()">Apply Now</button>
+    </div>
+
+    <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Home</button>
+</div>
+
+<script>
+function applyNow() {
+    alert("Send your resume to: ravintechsolution@gmail.com");
+}
+</script>
+
+</body>
+</html>
