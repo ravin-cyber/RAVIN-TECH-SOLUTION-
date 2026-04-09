@@ -134,6 +134,18 @@ footer{
   text-decoration:none;
   font-size:22px;
 }
+/* ANIMATIONS */
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+    }
+  
 </style>
 </head>
 
@@ -151,7 +163,7 @@ footer{
 
 <h2>Build Your Career</h2>
 
-<section class="hero" id="home">
+<section id="Home" class="fade-in">
   <p class="tagline">
 Empowering innovation through cutting-edge technology, we build digital solutions that shape the future. Step into the world of tech and unlock endless possibilities.
   </p>
@@ -160,7 +172,7 @@ Empowering innovation through cutting-edge technology, we build digital solution
 <button class="btn" onclick="scrollToSection('contact')">Get Started</button>
 </section>
 
-<section id="services">
+<section id="service's" class="fade-in">
 <h2>Our Services</h2>
 <div class="cards">
 <div class="card"><h3>Web Development</h3><p>Modern websites</p></div>
@@ -173,9 +185,9 @@ Empowering innovation through cutting-edge technology, we build digital solution
 <h2>Let’s Grow Your Business 🚀</h2>
 <button class="btn" onclick="scrollToSection('contact')">Contact Now</button>
 </section>
-
-<section id="contact">
-<h2>Contact</h2>
+  
+<section id="contact" class="fade-in">
+  <h2>Contact</h2>
 <p>WhatsApp: 9042458779</p>
 <p>Instagram: @rx_traffic_razer_46</p>
 </section>
@@ -191,6 +203,25 @@ function scrollToSection(id){
  document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 </script>
+  <script>
+function scrollToSection(id){
+ document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+// ANIMATION ON SCROLL
+const elements = document.querySelectorAll('.fade-in');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if(position < screenHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+  </script>
 
 </body>
 </html>
