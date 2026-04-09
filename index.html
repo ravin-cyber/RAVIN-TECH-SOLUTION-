@@ -8,6 +8,61 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+  /* AI Button */
+#ai-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: red;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Chat Box */
+#chat-box {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: black;
+    border: 2px solid red;
+    display: none;
+    flex-direction: column;
+}
+
+/* Header */
+.chat-header {
+    background: red;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Messages */
+#chat-content {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Input */
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 5px;
+}
+
+.chat-input button {
+    background: red;
+    border: none;
+    color: white;
+}
   /* HERO SECTION */
 .hero {
     position: relative;
@@ -199,6 +254,64 @@ footer{
 }
 </style>
 </head>
+  <!-- AI Chat Button -->
+<div id="ai-btn" onclick="openChat()">💬 AI</div>
+
+<!-- Chat Box -->
+<div id="chat-box">
+    <div class="chat-header">
+        AI Assistant
+        <span onclick="closeChat()">✖</span>
+    </div>
+
+    <div id="chat-content"></div>
+
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Ask something...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+  <script>
+function openChat() {
+    document.getElementById("chat-box").style.display = "flex";
+}
+
+function closeChat() {
+    document.getElementById("chat-box").style.display = "none";
+}
+
+function sendMessage() {
+    let input = document.getElementById("user-input");
+    let message = input.value;
+
+    if(message === "") return;
+
+    let chat = document.getElementById("chat-content");
+
+    chat.innerHTML += "<p><b>You:</b> " + message + "</p>";
+
+    let reply = getAIResponse(message);
+
+    setTimeout(() => {
+        chat.innerHTML += "<p><b>AI:</b> " + reply + "</p>";
+        chat.scrollTop = chat.scrollHeight;
+    }, 500);
+
+    input.value = "";
+}
+
+/* Simple AI Logic */
+function getAIResponse(msg) {
+    msg = msg.toLowerCase();
+
+    if(msg.includes("hello")) return "Hello 👋 Welcome to Ravin Tech Solutions!";
+    if(msg.includes("price")) return "Prices depend on services. DM us on WhatsApp!";
+    if(msg.includes("contact")) return "Contact us on WhatsApp: 9042458779";
+    if(msg.includes("services")) return "We offer Web, App Development & Marketing.";
+
+    return "I'm your AI assistant 🤖. Ask about our services!";
+}
+  </script>
 
 <body>
 
